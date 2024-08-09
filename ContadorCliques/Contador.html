@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contador de cliques</title>
+    <style>
+        body{
+            padding: 0px;
+            margin: 0px;
+        }
+        div#contadorCliques{
+            width: 700px;
+            height: 408px;
+            margin: auto;
+            margin-top: 200px;
+            
+            
+        }
+        p#visor{
+            text-align: center;
+            font-size: 1.5em;
+        }
+        button#limpar,
+        button#cliques{
+            margin-top: 15px;
+            margin-left: 29%;
+            padding: 5px;
+            width: 300px;
+            font-size: 1em;
+            border: 0px;
+        }
+        button#cliques:hover{
+            background-color: rgba(0, 128, 0, 0.422);
+        }
+        button#limpar:hover{
+            background-color: rgba(255, 0, 0, 0.419);
+        }
+    </style>
+</head>
+<body>
+    <div id="contadorCliques">
+        <p id="visor">0 cliques</p>
+        <button id="cliques">Clique</button>
+        <button id="limpar"onclick="Limpar()">Limpar</button>
+    </div>
+
+    <script>
+        
+    const button = document.getElementById('cliques');
+    const display = document.getElementById('visor');
+    let contador = 0;
+    button.addEventListener('click', () => {
+    contador++;
+    display.textContent = contador + (contador === 1 ? ' clique' : ' cliques');
+    });
+
+    function Limpar(){
+        contador = 0;
+        display.textContent = "0 cliques";
+    }
+    </script>
+</body>
+</html>

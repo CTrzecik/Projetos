@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cronometro</title>
+
+    <style>
+        *{
+            padding: 0px;
+            margin: 0px;
+        }
+        body{
+            background-color: black;
+        }
+        div#cronometro{
+            width: 700px;
+            height: 408px;
+            margin: auto;
+            margin-top: 200px;
+            text-align: center;
+        }
+        p#timer{
+            font-size: 2em;
+            color: rgb(169, 160, 160);
+        }
+        button#Reset,
+        button#Start{
+            padding: 10px;
+            margin-left: 10px;
+            width: 100px;
+            border-radius: 20px;
+            background-color: black;
+            border-color: white;
+            color: rgb(187, 180, 180);
+            margin-top: 10px;
+            font-size: 1em;
+        }
+    </style>
+</head>
+<body>
+
+<div id="cronometro">
+<p id="timer">00:00:00</p>
+<button id="Start">Start</button>
+<button id="Reset">Reset</button>
+</div>
+<script>
+
+function formatTime(time) {
+    return time < 10 ? "0" + time : time;
+}
+
+let seconds = 0;
+let minutes = 0;
+let hours = 0;
+let intervalId;
+let running = false;
+
+
+function updateTimer() {
+    seconds++;
+    if (seconds == 60) {
+        seconds = 0;
+        minutes++;
+        if (minutes == 60) {
+            minutes = 0;
+            hours++;
+        }
+    }
+    document.getElementById("timer").textContent = formatTime(hours) + ":" + formatTime(minutes) + ":" + formatTime(seconds);
+}
+
+
+function startStopTimer() {
+    if (running) {
+        clearInterval(intervalId);
+        running = false;
+        document.getElementById("Start").textContent = "Start";
+    } else {
+        intervalId = setInterval(updateTimer, 1000);
+        running = true;
+        document.getElementById("Start").textContent = "Stop";
+    }
+}
+
+
+function resetTimer() {
+    clearInterval(intervalId);
+    seconds = 0;
+    minutes = 0;
+    hours = 0;
+    document.getElementById("timer").textContent = "00:00:00";
+    running = false;
+    document.getElementById("Start").textContent = "Start";
+}
+
+
+document.getElementById("Start").addEventListener("click", startStopTimer);
+document.getElementById("Reset").addEventListener("click", resetTimer);
+
+</script>
+</body>
+</html>

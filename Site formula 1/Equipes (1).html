@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="equipes.css">
+    <title>Equipes</title>
+</head>
+<body>
+  <nav id="menu">
+    <ul>
+        <li><a href="Pagina_inicial.html">Home</a></li>
+        <li><a href="Equipes (1).html">Equipes</a></li>
+    </ul>
+    </nav>
+
+
+        <div class="slideshow-container">
+            
+            <div class="mySlides">
+              <a href="Alpine (1).html"><img src="https://pbs.twimg.com/profile_images/1786531888112295936/okX03Q_G_400x400.jpg"   alt="Alpine"></a>
+            </div>
+          
+            <div class="mySlides">
+              <a href="AstonMartin (1).html"><img src="https://pbs.twimg.com/profile_images/1572246279064887308/vgRs_Gnn_400x400.jpg" alt="AstonMartin"></a>
+            </div>
+          
+            
+            <div class="mySlides">
+              <a href="Ferrari.html"><img src="https://pbs.twimg.com/profile_images/947659786555940865/P5eYYYIx_400x400.jpg" alt="Ferrari"></a>
+            </div>
+
+            <div class="mySlides">
+                <a href="Haas.html"><img src="https://pbs.twimg.com/profile_images/1787796975204630528/ynesri6v_400x400.jpg" alt="Haas"></a>
+              </div>
+
+            <div class="mySlides">
+                <a href="McLaren.html"><img src="https://pbs.twimg.com/profile_images/1757741709574758400/dPLTWsFi_400x400.jpg" alt="McLaren"></a>
+              </div>
+              
+            <div class="mySlides">
+                <a href="Mercedes.html"><img src="https://pbs.twimg.com/profile_images/1675889461530378240/7067M6SS_400x400.jpg" alt="Mercedes"></a>
+              </div> 
+            
+            <div class="mySlides">
+                <a href="Racing_bulls.html"><img src="https://img.band.uol.com.br/image/2024/02/21/visa-cash-app-rb-formula-1-team-12559.png" alt="Racing_bulls"></a>
+              </div>
+              
+            <div class="mySlides">
+                <a href="Red_bull.html"><img src="https://pbs.twimg.com/profile_images/1788139372723765248/Oqxg1aY7_400x400.jpg" alt="Red_bull"></a>
+              </div>
+
+            <div class="mySlides">
+                <a href="Sauber.html"><img src="https://img.band.uol.com.br/image/2024/02/28/stake-f1-team-team-kick-sauber-2024-92453.jpg" alt="Sauber"></a>
+              </div>
+
+            <div class="mySlides">
+                <a href="Williams.html"><img src="https://pbs.twimg.com/profile_images/1754504873251381248/o3Ifh-jJ_400x400.jpg" alt="Williams"></a>
+              </div>
+
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+          </div>
+          
+<script>
+    var slideIndex = 1;
+  showSlides(slideIndex);
+
+  function plusSlides(n) {
+    showSlides(slideIndex += n);
+  }
+
+  function showSlides(n) {
+    var i;
+    var slides = document.getElementsByClassName("mySlides");
+    if (n > slides.length) {slideIndex = 1}
+    if (n < 1) {slideIndex = slides.length}
+    for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+    }
+    slides[slideIndex-1].style.display = "block";
+  }
+  </script>
+    
+</body>
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+    <style>
+        *{
+            padding: 0px;
+            margin: 0px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        body{
+            background-image: linear-gradient(190deg,#010626,#010440,#020659 );
+            background-repeat: no-repeat;
+            height: 93vh;
+        
+            
+        }
+        form#formulario{
+            margin: auto;
+            margin-top: 10%;
+            background-color: #3b3d3d00;
+            width: 800px;
+            height: 400px;
+            
+        }
+         h1 {
+            font-size: 2em;
+            text-align: center;
+            font-weight: bold;
+            color: rgb(255, 255, 255);
+            margin-top: 70px;
+            background-color: #3b3d3d00;
+           
+         }
+
+         input#nome,
+         input#dataNascimento,
+         input#email{
+            margin-top: 15px;
+            width: 798px;
+            height: 30px;
+            background-color: white;
+            border-radius: 30px;
+            border: 0px;
+            padding: 0px 10px;
+            
+         }
+         
+       
+
+         button#validar{
+            margin-top: 15px;
+            margin-left: 32%;
+            padding: 5px;
+            width: 300px;
+            font-size: 1em;
+            border: 0px;
+         }
+         button#validar:hover{
+            background-color:#BF7E04 ;
+         }
+
+    </style>
+</head>
+<body>
+    <h1>Formulario</h1>
+    <form action="" id="formulario">
+        <input type="text" id="nome" placeholder="Nome:"><br>
+        <input type="text" id="dataNascimento" placeholder="Data de Nascimento:"><br>
+        <input type="text" id="email"placeholder="Email:"><br>
+        <button id="validar">Validar</button>
+    </form>
+
+    <script>
+        
+            var inp1 = document.getElementById("nome");
+            var inp2 = document.getElementById("dataNascimento");
+            
+            // Validar Email
+            const form = document.querySelector('form');
+            const buttonSubmit = document.getElementById("validar");
+
+            const emailValidar = (email) => {
+                let validar = /\S+@\S+\.\S+/;
+                return validar.test(email);
+            }
+
+            buttonSubmit.addEventListener('click', function(event){
+                let email = document.getElementById('email').value;
+                if(email.trim() != ''){
+                let response = emailValidar(email);
+                if(response){
+                    validarNome();
+                }else{
+                    alert("Email invalido!")
+                }
+                
+             } else{
+                alert("Preencha o Email!")
+             }
+             event.preventDefault();
+            })
+            
+            // Validar nome
+        function validarNome(){
+            var validarNome = inp1.value.trim();
+            if(validarNome != '') {
+                validarNascimento();
+
+            }else{   
+                alert("Preencha o Nome");
+            } 
+        }
+        // Validar Data de nascimento
+        function validarNascimento() {
+            var validarNascimento = inp2.value.trim();
+            if(validarNascimento != '') {
+                form.reset();
+            }else{   
+                alert("Preencha a Data de Nascimento");
+            }
+        } 
+    
+    </script>
+
+</body>
+</html>

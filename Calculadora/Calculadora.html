@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+    <style>
+        *{
+            padding: 0px;
+            margin: 0px;
+        }
+        body{
+            background-color: black;
+        }
+        section{
+            display: flex;
+            justify-content: center;
+            
+        }
+        div#calculator {
+            position: absolute;
+            align-items: center;
+            display: grid;
+            grid-template-columns:auto;
+            grid-template-rows: auto;
+            height: 370px;
+            width: 300px;
+            background-color: rgb(60, 19, 19);
+            margin-top: 20%;
+            
+        }
+        div#coluna1,
+        div#coluna2,
+        div#coluna3,
+        div#coluna4,
+        div#coluna5{
+            background-color: black;
+            width: 300px;
+        }
+        input#visor{
+            width: 300px;
+            height: 100px;
+            background-color: gray;
+            color: black;
+            font-size: 1.5em;
+        }
+        input.vazio{
+            color:black;
+            background-color: black;
+            width: 50px;
+            height: 50px;
+            font-size: 1em;
+            border: 0px;
+        }
+        input.operators,
+        input.numbers1,
+        input.numbers2,
+        input.numbers3,
+        input.numbers4{
+            width: 72px;
+            height: 55px;
+            font-size: 1.3em;
+            color: orange;
+            background-color: black;
+            border: 0px;
+        }
+        input:hover{
+            background-color: rgb(72, 68, 77);
+        }
+    </style>
+</head>
+<body>
+
+    <section>
+        <div id="calculator">
+            <input type="text" id="visor" disabled>
+            <div id="coluna1">
+                <input type="button" value="0" onclick="clicar('0')" class="numbers1">
+                <input type="button" value="1" onclick="clicar('1')" class="numbers1">
+                <input type="button" value="2" onclick="clicar('2')" class="numbers1">
+                <input type="button" value="3" onclick="clicar('3')" class="numbers1">
+            </div>
+            <div id="coluna2">
+                <input type="button" value="4" onclick="clicar('4')" class="numbers2">
+                <input type="button" value="5" onclick="clicar('5')" class="numbers2">
+                <input type="button" value="6" onclick="clicar('6')" class="numbers2">
+                <input type="button" value="7" onclick="clicar('7')" class="numbers2">
+            </div>
+            <div id="coluna3">
+                <input type="button" value="8" onclick="clicar('8')" class="numbers3">
+                <input type="button" value="9" onclick="clicar('9')" class="numbers3">
+                <input type="button" value="." onclick="clicar('.')" class="numbers3">
+                <input type="button" value="+" onclick="operação('+')"  class="operators">
+            </div>
+            <div id="coluna4">
+                <input type="button" value="-" onclick="operação('-')" class="operators">
+                <input type="button" value="/" onclick="operação('/')" class="operators">
+                <input type="button" value="*" onclick="operação('*')" class="operators">
+                <input type="button" value="=" onclick="calcular('=')" class="operators">
+            </div>
+                <div id="coluna5">
+                    <input type="button" value="AC" onclick="limpar('AC')" class="operators">
+                    <input type="button" value="AC"class="vazio">
+                    <input type="button" value="AC"class="vazio">
+                    <input type="button" value="AC"class="vazio">
+                </div>
+        
+        </div>
+
+    </section>
+
+        <script>
+
+        var visor = document.getElementById("visor");
+        var nume1 = '';
+        var nume2 = '';
+        var op = '';
+        var result = '';
+
+
+        function clicar(num){ 
+            visor.value += num;
+        }
+        function operação(operator){
+            op = operator;
+            nume1=visor.value;
+            visor.value = '';
+        }
+        function limpar(){
+            visor.value = '';
+            nume1 = '';
+            nume2 = '';
+            op = '';
+            result = '';
+        }
+        function calcular(){
+            nume2 = visor.value;
+
+            switch(op){
+                    case '+':
+                    result = parseFloat(nume1)+parseFloat(nume2);
+                    break;
+                    case '-':
+                    result = parseFloat(nume1)-parseFloat(nume2);
+                    break;
+                    case '/':
+                    result = parseFloat(nume1)/parseFloat(nume2);
+                    break;
+                    case '*':
+                    result = parseFloat(nume1)*parseFloat(nume2);
+                    break;
+
+
+
+            }
+            visor.value = result;
+                }
+        </script>
+    
+
+    
+</body>
+</html>

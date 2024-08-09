@@ -1,0 +1,78 @@
+*{
+  padding: 0px;
+  margin: 0px;
+  font-family: 'Times New Roman';
+}
+body{
+  background-color: rgb(0, 0, 0);
+}
+nav div#clock {
+  margin-left: 1230px;
+  margin-top: -35px;
+  font-size: 1.2em;
+}
+nav#menu ul {
+  list-style-type: none;
+  overflow: hidden;
+  background-color: #decd6c;
+  
+}
+
+nav#menu li {
+  float:inline-start;
+
+}
+
+nav#menu li a {
+  display: flex;
+  color: rgb(0, 0, 0);
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+nav#menu li a:hover {
+  background-color: #e6d88a;
+}
+.slideshow-container {
+  
+  max-width: 295px;
+  position: relative;
+  margin-top: 10%;
+  margin-left: 40%;
+}
+
+.mySlides {
+  display: none;
+}
+
+img {
+  width:  250px;
+  height: 250px;
+  border-radius: 300px;
+  border: 2px solid white;
+}
+
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 10px;
+  margin-top: -22px;
+  margin-left: -40px;
+  margin-right: 5px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 10px;
+  user-select: none;
+}
+
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+

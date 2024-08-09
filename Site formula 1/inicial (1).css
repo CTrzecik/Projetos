@@ -1,0 +1,79 @@
+*{
+  padding: 0px;
+  margin: 0px;
+}
+nav div#clock {
+  margin-left: 1250px;
+  margin-top: -30px;
+}
+body{
+  background-color: #3d3b3b;
+  background-image: url(https://wallpaper.forfun.com/fetch/f5/f5d0400a5c784d2099c08bb2b341fdff.jpeg?w=1200&r=0.5625);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+nav#menu ul {
+  list-style-type: none;
+  overflow: hidden;
+  background-color: #decd6c;
+  
+}
+
+nav#menu li {
+  float:inline-start;
+
+}
+
+nav#menu li a {
+  display: flex;
+  color: rgb(0, 0, 0);
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+nav#menu li a:hover {
+  background-color: #e6d88a;
+}
+main#blur{
+  position: absolute;
+  width: 100vw;
+  height: 93vh;
+  background-color: rgba(255, 255, 255, 0);
+  backdrop-filter: blur(1.5px);
+}
+h1{
+  text-align: center;
+}
+p {
+  text-align: justify;
+  color: rgb(0, 0, 0);
+  text-indent: 30px;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 1.2em;
+  margin-top: -20px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #decd6c;
+  color: rgb(0, 0, 0);
+  text-align: center;
+  height: 40px;
+ 
+}
+footer p {
+  text-align: center;
+}
+.container{
+  display: flex;
+  margin: auto;
+  width: 300px;
+  height: 260px;
+}
+

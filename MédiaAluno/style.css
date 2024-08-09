@@ -1,0 +1,88 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+
+:root{
+    ---color: white;
+}
+
+body{
+    background-color: rgb(118, 116, 116);
+}
+section#section2{
+    display: none;
+}
+div#interface1{
+    width: 700px;
+    height: 300px;
+    margin: auto;
+    margin-top: 10%;
+    text-align: center;
+}
+div#interface2{
+    width: 700px;
+    height: 300px;
+    margin: auto;
+    margin-top: 10%;
+    text-align: center;
+}
+input#inpDisc,
+input#inpMeta,
+input#addNota{
+    margin-top: 25px;
+    height: 40px;
+    width: 300px;
+}
+button#cclBotao:hover,
+button#addBotao:hover{
+    background-color: gray;
+}
+button#entrar,
+button#cclBotao,
+button#addBotao{
+    margin-top: 15px;
+    font-size: 1em;
+    width: 100px;
+    height: 30px;
+    border: none;
+    border-radius: 10px;
+    color: var(---color);
+    background-color: black;
+}
+p#visorMeta{
+    margin-top: -26px;
+    margin-left: 400px;
+    color: black;
+    font-size: 1.5em;
+}
+p#visorDisc{
+    margin-top: 50px;
+    margin-right: 400px;
+    color: black;
+    font-size: 1.5em;
+}
+p#visorMedia{
+    text-align: center;
+    margin-top: 75px;
+    font-size: 1.5em;
+    color: var(---color);
+    display: none;
+}
+div#divNotas{
+    background-color: rgba(0, 0, 0, 0.368);
+    width: 550px;
+    height: 350px;
+    margin: auto;
+    margin-top: -150px;
+
+}
+ul#visorNotas{
+    margin-top: 0px;
+}
+li{
+    margin-left: 30px;
+    color: var(---color);
+    font-size: 1.5em;
+    list-style: none;
+}

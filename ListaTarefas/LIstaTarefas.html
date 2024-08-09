@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap" rel="stylesheet">
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+           font-family: Arial, Helvetica, sans-serif;
+        }
+        body{
+            background-color: rgb(75, 69, 69);
+            background-image: url(https://images7.alphacoders.com/367/thumb-1920-367658.jpg);
+        }
+
+        h1 {
+            color: white;
+            text-align: center;
+            font-family: "Fjalla One", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            font-size: 30px;
+            margin-top: 100px;
+        }
+
+        div#interface {
+            width: 700px;
+            height: 408px;
+            background-color: rgba(14, 13, 13, 0.308);
+            margin: auto;
+            margin-top: 200px;
+            border-radius: 10px;
+            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.417);
+        }
+
+        input {
+            height: 30px;
+            width: 400px;
+            margin-top: 60px;
+            margin-left: 50px;
+            padding: 10px;
+        }
+
+        ol#visor {
+            width: 690px;
+            height: 210px;
+            margin-left: 5px;
+            margin-top: 70px;
+            border-radius: 10px;
+            color: aliceblue;
+            font-weight: bold;
+
+        }
+
+        li {
+            
+            margin-left: 30px;
+            margin-top: 0px;
+        }
+
+        button {
+            width: 70px;
+            height: 30px;
+        }
+
+        button:hover {
+            background-color: lightgray;
+            
+        }
+
+   
+      
+        
+    </style>
+    <title>Lista de Tarefas</title>
+</head>
+<body>
+    <head><H1>Lista De Tarefas</H1></head>
+    <div id="interface">
+        <input type="text" id="inputEntrada" placeholder="Digite uma nova tarefa!">
+        <button onclick="lista()">Adiconar</button>
+        <ol id="visor"></ol>
+       
+    </div>
+    
+    <script>
+        var visor = document.getElementById("visor");
+        var tarefas = [];
+        function lista(tarefa){
+            
+            var inputEntrada = document.getElementById("inputEntrada");
+            var addTarefa = inputEntrada.value.trim();
+            
+            if(addTarefa !== ''){
+                if(tarefas.length < 10 ){
+            tarefas.push(addTarefa);
+            mostrarTarefa();
+            inputEntrada.value = '';
+            } else {
+                alert("Você atingiu o limite de 10 tarefas!");
+            }
+          }
+        }    
+        function mostrarTarefa(){
+        visor.innerHTML = "";
+        tarefas.forEach(function(tarefa){
+        var li = document.createElement("li");
+        li.textContent = tarefa;
+        visor.appendChild(li);
+        });
+            }
+        
+        
+    </script>
+</body>
+</html>
