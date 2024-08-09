@@ -1,0 +1,126 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Estilizando o botão */
+#meuBotao {
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  background-color: #000000;
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* Adicionando uma transição suave */
+}
+
+
+#meuBotao:hover {
+  background-color: #ffffff;
+  color: #000000;
+}
+body {
+  font-family: Arial, sans-serif;
+  
+}
+/* Navbar */
+nav {
+  background-color: #333;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5% 30px;
+}
+
+.nav-toggle {
+  display: none;
+}
+
+.nav-toggle-label {
+  cursor: pointer;
+  padding: 5px;
+  user-select: none;
+}
+
+.nav-toggle-label span {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  border-radius: 3px;
+  transition: transform 0.3s ease;
+}
+
+/* Para mudar a cor dos textos dos links na barra de navegação */
+nav ul li a {
+  color: #000000; 
+  text-decoration: none; /* Removendo o sublinhado padrão dos links */
+}
+
+/* Estilo de hover (quando passa o mouse) */
+nav ul li a:hover {
+  color: #000000; 
+  background-color: #ffffff;
+}
+.menu {
+  display: flex;
+  list-style: none;
+}
+
+.menu li {
+  margin-right: 20px;
+}
+
+.menu li:last-child {
+  margin-right: 0;
+}
+
+.menu a {
+  color: white;
+  text-decoration: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.menu a:hover {
+  background-color: #555;
+}
+
+
+@media screen and (max-width: 1300px) {
+
+  nav{
+    padding: 5%;
+  }
+
+  .underline {
+    text-decoration: none;
+  }
+  nav ul {
+    font-size: 35px;
+  }
+
+  h5{
+    
+    font-size: 30px;
+  }
+  
+  h1 {
+    font-size: 70px;
+  }
+  
+
+  h3{
+    font-size: 50px;
+  }
+  p {
+    text-align: justify;
+    font-size: 30px;
+  }
+
+  
+}
